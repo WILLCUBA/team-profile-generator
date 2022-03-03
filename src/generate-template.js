@@ -6,7 +6,7 @@ const generateCards = function(array) {
         console.log(element);
         if (element.getRole() === 'Manager') {
             cards.push(`    
-            <div class="card text-white bg-primary mb-3 p-0" style="max-width: 18rem;">
+            <div class="card text-white bg-primary mb-3 p-2" style="max-width: 18rem;">
             <h5 class="card-title text-white text-center">${element.getName()}</h5>
             <h6 class="card-subtitle mb-2 text-white text-center">${element.getRole()}</h6>
             <div class="card-body bg-light text-dark text-center">
@@ -20,7 +20,7 @@ const generateCards = function(array) {
         `)
         } else if (element.getRole() === 'Engineer') {
             cards.push(`    
-            <div class="card text-white bg-primary mb-3 p-0" style="max-width: 18rem;">
+            <div class="card text-white bg-primary mb-3 p-2" style="max-width: 18rem;">
             <h5 class="card-title">${element.getName()}</h5>
             <h6 class="card-subtitle mb-2 text-white text-center">${element.getRole()}</h6>
             <div class="card-body bg-light text-dark text-center">
@@ -34,7 +34,7 @@ const generateCards = function(array) {
         `)
         } else if (element.getRole() === 'Intern') {
             cards.push(`    
-            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card text-white bg-primary mb-3 p-2" style="max-width: 18rem;">
             <h5 class="card-title">${element.getName()}</h5>
             <h6 class="card-subtitle mb-2 text-white text-center">${element.getRole()}</h6>
             <div class="card-body bg-light text-dark text-center">
@@ -63,7 +63,10 @@ const generateTemplate = function(array) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Team Profile</title>
 </head>
-<body class="bg-secondary">
+<body>
+    <div class="container text-center p-4 bg-danger mb-3">
+    <h3>My Team</h3>
+    </div>
     <div class="container d-flex justify-content-around">
         ${generateCards(array)}
     </div>
